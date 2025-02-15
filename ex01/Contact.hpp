@@ -1,6 +1,9 @@
 #ifndef CONTACT_H
 # define CONTACT_H
 
+#include <string>
+#include <iostream>
+
 class Contact
 {
     private:
@@ -11,8 +14,10 @@ class Contact
         std::string secret;
 
     public:
-        Contact(void);
+        Contact();
+        Contact(std::string fn, std::string ln, std::string nn, std::string num, std::string secret);
         ~Contact(void);
-}
+
+};
 
 #endif

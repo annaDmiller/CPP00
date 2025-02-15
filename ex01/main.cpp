@@ -1,11 +1,16 @@
 #include <iostream>
-#include <string.h>
+#include <string>
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {
-    std::string cmd;
     std::cout << "Hello! Welcome to the PhoneBook programm" << std::endl;
     std::cout << std::endl;
+
+    std::string cmd;
+    PhoneBook   book;
+    int         ind = 0;
 
     while (1)
     {
@@ -14,7 +19,7 @@ int main(void)
         if (std::cin.eof())
         {
             std::cout << "EOF is detected. Exiting the program." << std::endl;
-            break ;
+            exit(1);
         }
         if (cmd == "")
         {
@@ -24,8 +29,10 @@ int main(void)
         }
         if (cmd == "ADD")
         {
-            std::cout << "You typed ADD." << std::endl;
             std::cout << std::endl;
+            if (ind ==  8)
+                ind = 0;
+            book.add_contact(ind);
             continue ;
         }
         if (cmd == "SEARCH")
