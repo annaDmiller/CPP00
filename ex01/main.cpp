@@ -14,13 +14,13 @@ int main(void)
 
     while (1)
     {
-        std::cout << "Please, type one of those commands: ADD, SEARCH, EXIT" << std::endl;
-        std::getline(std::cin, cmd);
         if (std::cin.eof())
         {
             std::cout << "EOF is detected. Exiting the program." << std::endl;
-            exit(1);
+            break ;
         }
+        std::cout << "Please, type one of those commands: ADD, SEARCH, EXIT" << std::endl;
+        std::getline(std::cin, cmd);
         if (cmd == "")
         {
             std::cout << "You typed an empty line. Please, try again." << std::endl;
@@ -33,13 +33,14 @@ int main(void)
             if (ind ==  8)
                 ind = 0;
             book.add_contact(ind);
+            ind++;
             continue ;
         }
         if (cmd == "SEARCH")
         {
-            std::cout << "You typed SEARCH." << std::endl;
             std::cout << std::endl;
-            continue ; 
+            book.print_book();
+            continue ;
         }
         if (cmd == "EXIT")
         {

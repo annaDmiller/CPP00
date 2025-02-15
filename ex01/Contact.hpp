@@ -14,10 +14,15 @@ class Contact
         std::string secret;
 
     public:
-        Contact();
+        Contact(void);
         Contact(std::string fn, std::string ln, std::string nn, std::string num, std::string secret);
         ~Contact(void);
 
+        void display_fname(int limit);
+        void display_lname(int limit);
+        void display_nickname(int limit);
+        void display_phone_num(int limit);
+        void display_secret(int limit);
 };
 
 #endif
