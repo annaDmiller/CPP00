@@ -17,6 +17,9 @@ all : $(NAME)
 $(NAME): $(OBJECTS)
 		$(CC) $(CC_FLAGS) -o $(NAME) $(OBJECTS)
 
+%.o:%.cpp
+		$(CC) $(CC_FLAGS) -c $< -o $@
+
 clean:
 		$(RM) $(RM_FLAGS) $(OBJECTS)
 
