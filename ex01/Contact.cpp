@@ -30,7 +30,7 @@ Contact::~Contact(void)
     return ;
 }
 
-void    Contact::display_fname(int limit)
+void    Contact::display_fname(int limit) const
 {
     size_t  length = (this->first_name).length();
     size_t  space_to_print;
@@ -54,7 +54,7 @@ void    Contact::display_fname(int limit)
     return ;
 }
 
-void    Contact::display_lname(int limit)
+void    Contact::display_lname(int limit) const
 {
     size_t  length = (this->last_name).length();
     size_t  space_to_print;
@@ -78,7 +78,7 @@ void    Contact::display_lname(int limit)
     return ;
 }
 
-void    Contact::display_nickname(int limit)
+void    Contact::display_nickname(int limit) const
 {
     size_t  length = (this->nickname).length();
     size_t  space_to_print;
@@ -102,7 +102,7 @@ void    Contact::display_nickname(int limit)
     return ;
 }
 
-void    Contact::display_phone_num(int limit)
+void    Contact::display_phone_num(int limit) const
 {
     size_t  length = (this->phone_num).length();
     size_t  space_to_print;
@@ -126,7 +126,7 @@ void    Contact::display_phone_num(int limit)
     return ;
 }
 
-void    Contact::display_secret(int limit)
+void    Contact::display_secret(int limit) const
 {
     size_t  length = (this->secret).length();
     size_t  space_to_print;

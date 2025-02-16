@@ -69,7 +69,7 @@ void    PhoneBook::add_contact(int ind)
     return ;
 }
 
-void    PhoneBook::print_book(void)
+void    PhoneBook::print_book(void) const
 {
     size_t      length_word;
     std::string str_ind;
@@ -114,7 +114,7 @@ void    PhoneBook::print_book(void)
     return ;
 }
 
-void    PhoneBook::print_ind_contact(int ind)
+void    PhoneBook::print_ind_contact(int ind) const
 {
     std::cout << "Information about contact under index " << ind << " is shown below:" << std::endl;
 

@@ -30,11 +30,11 @@ class Contact
         Contact(std::string fn, std::string ln, std::string nn, std::string num, std::string secret);
         ~Contact(void);
 
-        void display_fname(int limit);
-        void display_lname(int limit);
-        void display_nickname(int limit);
-        void display_phone_num(int limit);
-        void display_secret(int limit);
+        void display_fname(int limit) const;
+        void display_lname(int limit) const;
+        void display_nickname(int limit) const;
+        void display_phone_num(int limit) const;
+        void display_secret(int limit) const;
 };
 
 #endif
