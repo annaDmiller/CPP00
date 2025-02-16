@@ -1,8 +1,8 @@
 CC = c++
 
-CC_FLAGS = -Wall -Werror -Wextra -std=c++98
+CC_FLAGS = -std=c++98
 
-NAME = account
+NAME = accounts
 
 SOURCES =	tests.cpp \
 			Account.cpp
@@ -17,6 +17,9 @@ all : $(NAME)
 
 $(NAME): $(OBJECTS)
 		$(CC) $(CC_FLAGS) -o $(NAME) $(OBJECTS)
+
+%.o:%.cpp
+		$(CC) $(CC_FLAGS) -c $< -o $@
 
 clean:
 		$(RM) $(RM_FLAGS) $(OBJECTS)
