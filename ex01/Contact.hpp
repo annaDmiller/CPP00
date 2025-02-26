@@ -35,6 +35,7 @@ class Contact
         void display_nickname(int limit) const;
         void display_phone_num(int limit) const;
         void display_secret(int limit) const;
+        int empty_fname(void) const;
 };
 
 #endif

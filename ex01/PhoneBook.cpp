@@ -33,35 +33,68 @@ void    PhoneBook::add_contact(int ind)
     std::string phone_num;
     std::string secret;
 
-    std::cout << "Input the first name of the contact : ";
-    std::getline(std::cin, first_name);
-    std::cout << std::endl;
-    if (std::cin.eof())
-        return ;
+    while (1)
+    {
+        std::cout << "Input the first name of the contact : ";
+        std::getline(std::cin, first_name);
+        std::cout << std::endl;
+        if (first_name != "")
+            break ;
+        if (std::cin.eof())
+            return ;
+        std::cout << "First name can't be empty. Please, enter once more." << std::endl;
+        std::cout << std::endl;
+    }
 
-    std::cout << "Input the last name of the contact : ";
-    std::getline(std::cin, last_name);
-    std::cout << std::endl;
-    if (std::cin.eof())
-        return ;
+    while (1)
+    {
+        std::cout << "Input the last name of the contact : ";
+        std::getline(std::cin, last_name);
+        std::cout << std::endl;
+        if (last_name != "")
+            break ;
+        if (std::cin.eof())
+            return ;
+        std::cout << "Last name can't be empty. Please, enter once more." << std::endl;
+        std::cout << std::endl;
+    }
 
-    std::cout << "Input the nickname of the contact : ";
-    std::getline(std::cin, nickname);
-    std::cout << std::endl;
-    if (std::cin.eof())
-        return ;
-
-    std::cout << "Input the phone number of the contact : ";
-    std::getline(std::cin, phone_num);
-    std::cout << std::endl;
-    if (std::cin.eof())
-        return ;
-
-    std::cout << "Input the darkest secret of the contact : ";
-    std::getline(std::cin, secret);
-    std::cout << std::endl;
-    if (std::cin.eof())
-        return ;
+    while (1)
+    {
+        std::cout << "Input the nickname of the contact : ";
+        std::getline(std::cin, nickname);
+        std::cout << std::endl;
+        if (nickname != "")
+            break ;
+        if (std::cin.eof())
+            return ;
+        std::cout << "Nickname can't be empty. Please, enter once more." << std::endl;
+        std::cout << std::endl;
+    }
+    while (1)
+    {
+        std::cout << "Input the phone number of the contact : ";
+        std::getline(std::cin, phone_num);
+        std::cout << std::endl;
+        if (phone_num != "")
+            break ;
+        if (std::cin.eof())
+            return ;
+        std::cout << "Phone number can't be empty. Please, enter once more." << std::endl;
+        std::cout << std::endl;
+    }
+    while (1)
+    {
+        std::cout << "Input the darkest secret of the contact : ";
+        std::getline(std::cin, secret);
+        std::cout << std::endl;
+        if (secret != "")
+            break ;
+        if (std::cin.eof())
+            return ;
+        std::cout << "Darkest secret can't be empty. Please, enter once more." << std::endl;
+        std::cout << std::endl;
+    }
 
     this->arr[ind] = Contact(first_name, last_name, nickname, phone_num, secret);
 
@@ -74,6 +107,7 @@ void    PhoneBook::print_book(void) const
     std::string str_ind;
     int         ind;
 
+    std::cout << "    Index|First name| Last name|  Nickname|" << std::endl;
     for (int ind = 0; ind < 8; ind++)
     {
         std::cout.put('\t');
@@ -88,6 +122,12 @@ void    PhoneBook::print_book(void) const
         std::cout << std::endl;
     }
     std::cout << std::endl;
+    if ((this->arr[0]).empty_fname())
+    {
+        std::cout << "Phonebook is empty. Nothing to search." << std::endl;
+        std::cout << std::endl;
+        return ;
+    }
     while (1)
     {
         std::cout << std::endl;
@@ -102,10 +142,16 @@ void    PhoneBook::print_book(void) const
             continue ;
         }
         ind = std::atoi(str_ind.c_str());
-        if (ind > 7 || ind < 0)
+        if (ind > 7 || ind < 0 || (ind == 0 && str_ind != "0"))
         {
             std::cout << "Incorrect index. Please, try again." << std::endl;
             continue ;
+        }
+        if (this->arr[ind].empty_fname())
+        {
+            std::cout << "The phonebook line for index " << ind << " is empty" << std::endl;
+            std::cout << std::endl;
+            return ;
         }
         this->print_ind_contact(ind);
         break ;

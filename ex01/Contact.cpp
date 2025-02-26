@@ -144,3 +144,10 @@ void    Contact::display_secret(int limit) const
         std::cout << this->secret;
     return ;
 }
+
+int Contact::empty_fname(void) const
+{
+    if (this->first_name == "")
+        return (1);
+    return (0);
+}
