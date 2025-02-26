@@ -33,13 +33,12 @@ Contact::~Contact(void)
 void    Contact::display_fname(int limit) const
 {
     size_t  length = (this->first_name).length();
-    size_t  space_to_print;
 
     if (limit == 10)
     {
         if (length <= 10)
         {
-            for (int ind = 0; ind < 10 - length; ind++)
+            for (size_t ind = 0; ind < 10 - length; ind++)
                 std::cout.put(' ');
             std::cout << this->first_name;
         }
@@ -57,13 +56,12 @@ void    Contact::display_fname(int limit) const
 void    Contact::display_lname(int limit) const
 {
     size_t  length = (this->last_name).length();
-    size_t  space_to_print;
 
     if (limit == 10)
     {
         if (length <= 10)
         {
-            for (int ind = 0; ind < 10 - length; ind++)
+            for (size_t ind = 0; ind < 10 - length; ind++)
                 std::cout.put(' ');
             std::cout << this->last_name;
         }
@@ -81,13 +79,12 @@ void    Contact::display_lname(int limit) const
 void    Contact::display_nickname(int limit) const
 {
     size_t  length = (this->nickname).length();
-    size_t  space_to_print;
 
     if (limit == 10)
     {
         if (length <= 10)
         {
-            for (int ind = 0; ind < 10 - length; ind++)
+            for (size_t ind = 0; ind < 10 - length; ind++)
                 std::cout.put(' ');
             std::cout << this->nickname;
         }
@@ -105,13 +102,12 @@ void    Contact::display_nickname(int limit) const
 void    Contact::display_phone_num(int limit) const
 {
     size_t  length = (this->phone_num).length();
-    size_t  space_to_print;
 
     if (limit == 10)
     {
         if (length <= 10)
         {
-            for (int ind = 0; ind < 10 - length; ind++)
+            for (size_t ind = 0; ind < 10 - length; ind++)
                 std::cout.put(' ');
             std::cout << this->phone_num;
         }
@@ -129,13 +125,12 @@ void    Contact::display_phone_num(int limit) const
 void    Contact::display_secret(int limit) const
 {
     size_t  length = (this->secret).length();
-    size_t  space_to_print;
 
     if (limit == 10)
     {
         if (length <= 10)
         {
-            for (int ind = 0; ind < 10 - length; ind++)
+            for (size_t ind = 0; ind < 10 - length; ind++)
                 std::cout.put(' ');
             std::cout << this->secret;
         }

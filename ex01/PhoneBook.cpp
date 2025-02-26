@@ -71,7 +71,6 @@ void    PhoneBook::add_contact(int ind)
 
 void    PhoneBook::print_book(void) const
 {
-    size_t      length_word;
     std::string str_ind;
     int         ind;
 
@@ -102,7 +101,7 @@ void    PhoneBook::print_book(void) const
             std::cout << "Empty line is input. Please, try again." << std::endl;
             continue ;
         }
-        ind = std::stoi(str_ind);
+        ind = std::atoi(str_ind.c_str());
         if (ind > 7 || ind < 0)
         {
             std::cout << "Incorrect index. Please, try again." << std::endl;
